@@ -13,7 +13,13 @@ public class UserAccreditation {
 	private Long id;
 
 	private String userId;
-	private String accreditaded;
+	private Boolean accreditaded;
+
+	public UserAccreditation(String userId, Boolean accreditaded) {
+		super();
+		this.userId = userId;
+		this.accreditaded = accreditaded;
+	}
 
 	public Long getId() {
 		return id;
@@ -31,11 +37,11 @@ public class UserAccreditation {
 		this.userId = userId;
 	}
 
-	public String getAccreditaded() {
+	public Boolean getAccreditaded() {
 		return accreditaded;
 	}
 
-	public void setAccreditaded(String accreditaded) {
+	public void setAccreditaded(Boolean accreditaded) {
 		this.accreditaded = accreditaded;
 	}
 
