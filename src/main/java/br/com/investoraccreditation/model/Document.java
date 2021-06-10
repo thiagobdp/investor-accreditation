@@ -36,6 +36,14 @@ public class Document {
 		this.content = form.getContent();
 	}
 
+	public Document(@NotNull @NotEmpty String name, @NotNull @NotEmpty String mimeType,
+			@NotNull @NotEmpty String content) {
+		super();
+		this.name = name;
+		this.mimeType = mimeType;
+		this.content = content;
+	}
+
 	public String getName() {
 		return name;
 	}

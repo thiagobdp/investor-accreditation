@@ -44,6 +44,13 @@ public class Payload {
 				form.getDocuments().stream().map(docForm -> new Document(docForm)).collect(Collectors.toList()));
 	}
 
+	public Payload(@NotNull AccreditationTypeEnum accreditationType,
+			@NotNull @NotEmpty @Size(min = 1) @Valid List<Document> documents) {
+		super();
+		this.accreditationType = accreditationType;
+		this.documents = documents;
+	}
+
 	public AccreditationTypeEnum getAccreditationType() {
 		return accreditationType;
 	}
@@ -58,6 +65,10 @@ public class Payload {
 
 	public void setDocuments(List<Document> documents) {
 		this.documents = documents;
+	}
+
+	public Long getId() {
+		return id;
 	}
 
 	public Payload() {
