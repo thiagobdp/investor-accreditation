@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com</groupId>
-	<artifactId>investor-accreditation</artifactId>
+	<artifactId>user-accreditation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>investor-accreditation</name>
-	<description>Investor Accreditation API</description>
+	<name>user-accreditation</name>
+	<description>User Accreditation API</description>
 
 	<properties>
 		<java.version>1.8</java.version>

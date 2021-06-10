@@ -27,8 +27,7 @@ public class PayloadController {
 
 	@Autowired
 	DocumentRepository documentRepository;
-
-	@Transactional
+	
 	@GetMapping
 	public List<PayloadDto> payload() {
 
