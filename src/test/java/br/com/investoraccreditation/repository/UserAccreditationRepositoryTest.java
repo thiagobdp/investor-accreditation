@@ -13,10 +13,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 @DataJpaTest
 @AutoConfigureTestDatabase (replace = AutoConfigureTestDatabase.Replace.NONE)
 @ActiveProfiles ("test")
-public class InvestorAccreditationRepositoryTest {
+public class UserAccreditationRepositoryTest {
 
 	@Autowired
-	private InvestorAccreditationRepository repository;
+	private UserAccreditationRepository repository;
 	
 	@Autowired
 	private TestEntityManager em;

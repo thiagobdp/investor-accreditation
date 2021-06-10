@@ -26,8 +26,9 @@ public class UserController {
 	@PostMapping(path = "accreditation", consumes = { "application/json" })
 	public UserAccreditationDto accreditation(@RequestBody @Valid UserAccreditationForm user) {
 
+		
+		
 		Random random = new Random();
-
 		return new UserAccreditationDto(true, (random.ints(1, 0, 10).findFirst().getAsInt() % 2) == 0);
 	}
 
