@@ -43,7 +43,7 @@ public class UserAccreditationRepositoryTest {
 
 		UserAccreditation userList = this.repository.findByUserId(userId);
 		Assert.assertNull(userList);
-		
+
 	}
 
 }

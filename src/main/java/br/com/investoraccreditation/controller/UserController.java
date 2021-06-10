@@ -1,5 +1,7 @@
 package br.com.investoraccreditation.controller;
 
+import java.util.stream.Collectors;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.investoraccreditation.controller.dto.UserAccreditationDto;
 import br.com.investoraccreditation.controller.form.UserAccreditationForm;
+import br.com.investoraccreditation.model.Document;
 import br.com.investoraccreditation.model.UserAccreditation;
+import br.com.investoraccreditation.repository.DocumentRepository;
+import br.com.investoraccreditation.repository.PayloadRepository;
 import br.com.investoraccreditation.repository.UserAccreditationRepository;
 
 @RestController
@@ -20,6 +25,12 @@ public class UserController {
 
 	@Autowired
 	UserAccreditationRepository userAccreditationRepository;
+
+	@Autowired
+	PayloadRepository payloadRepository;
+
+	@Autowired
+	DocumentRepository documentRepository;
 
 	/**
 	 * Receives documents to accreditate an investor. In the first request to a new
@@ -36,10 +47,14 @@ public class UserController {
 
 		UserAccreditation userAcc = userAccreditationRepository.findByUserId(userForm.getUser_id());
 		if (userAcc == null) {
-			userAcc = userAccreditationRepository.save(new UserAccreditation(userForm.getUser_id(), true));
+			userAcc = userAccreditationRepository
+					.save(new UserAccreditation(userForm, true, documentRepository, payloadRepository));
 		} else {
 			// reverses the value
 			userAcc.setAccreditaded(!userAcc.getAccreditaded());
+			//add documents to user
+			userAcc.getPayload().getDocuments().addAll(userForm.getPayload().getDocuments().stream()
+					.map(docForm -> Document.converter(docForm, documentRepository)).collect(Collectors.toList()));
 		}
 
 		return new UserAccreditationDto(true, userAcc.getAccreditaded());

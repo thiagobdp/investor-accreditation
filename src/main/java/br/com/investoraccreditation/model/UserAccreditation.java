@@ -4,6 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+import br.com.investoraccreditation.controller.form.UserAccreditationForm;
+import br.com.investoraccreditation.repository.DocumentRepository;
+import br.com.investoraccreditation.repository.PayloadRepository;
+import br.com.investoraccreditation.repository.UserAccreditationRepository;
+import net.bytebuddy.agent.builder.AgentBuilder.RedefinitionStrategy.Listener.Pausing;
 
 @Entity
 public class UserAccreditation {
@@ -15,8 +22,19 @@ public class UserAccreditation {
 	private String userId;
 	private Boolean accreditaded;
 
+	@OneToOne
+	private Payload payload;
+
 	public UserAccreditation() {
 		super();
+	}
+
+	public UserAccreditation(UserAccreditationForm form, Boolean accreditaded, DocumentRepository documentRepository,
+			PayloadRepository payloadRepository) {
+		super();
+		this.userId = form.getUser_id();
+		this.accreditaded = accreditaded;
+		this.payload = payloadRepository.save(new Payload(form.getPayload(), documentRepository));
 	}
 
 	public UserAccreditation(String userId, Boolean accreditaded) {
@@ -47,6 +65,10 @@ public class UserAccreditation {
 
 	public void setAccreditaded(Boolean accreditaded) {
 		this.accreditaded = accreditaded;
+	}
+
+	public Payload getPayload() {
+		return payload;
 	}
 
 }
