@@ -6,7 +6,7 @@ Clone this repository in your computer: https://github.com/thiagobdp/investor-ac
 
 ## 💻 Running the project
 
-Start running InvestorAccreditationApplication.java. 
+Start running UserAccreditationApplication.java. 
 
 ## 📄 User Accreditation 
 
