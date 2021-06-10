@@ -29,6 +29,7 @@ public class UserControllerTest {
 	public void accreditationTest() throws Exception {
 		URI uri = new URI("/user/accreditation");
 
+		//json to upload documents and accreditate user
 		String json = "{\r\n"//
 				+ "    \"user_id\": \"g8NlYJnk7zK9BlB1J2Ebjs0AkhCTpE1V\",\r\n"//
 				+ "    \"payload\": {\r\n"//
