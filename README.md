@@ -1,37 +1,31 @@
-#Worst Movie Golden Raspberry Awards.
+#User Accreditation API
 
-## Getting Started
+## ⚙ Getting Started
 
-Clone this repository in your computer: https://github.com/thiagobdp/grawards
+Clone this repository in your computer: https://github.com/thiagobdp/investor-accreditation
 
 ## 💻 Running the project
 
-Start running GRAwardsApplication.java. The CSV file "movielist.csv" which is located in the path "src\main\resources" will be loaded.
+Start running InvestorAccreditationApplication.java. 
 
-To change the data, just replace this file.
+## 📄 User Accreditation 
 
-When loading, data will be splitted in 3 entities: Indicated, Producer and Studio. 
+The User Accreditation Rest service receives json data and return success=true and accredited=true/false
 
-Producer and Studio will be stored with non-duplicated names.
+## ⭐ Bonus
 
-A rest service is available for consultation in "/producer/fastestSlowestWinner" to get the producer with the longest gap between two consecutive awards, and the one with the fastest two awards.
+The User Accreditation Informations are saved to H2 Memory Data Base.
 
-Rest services for Producer, Studio and Indicated are also available to list all records.
+The Rest service receives documents to accreditate an investor. In the first request to a new user_id, the user_id will be saved as accreditated=true with all the documents informed to the service.
 
-Services Paths:
+In the next requests for an existing user_id, it reverses the previous value of boolean accreditated and updates the data base. Also saves the documents to data base.
 
-/indicated
+Other Rest Services are available to list Entities "User Accreditation", "Payload" and "Document".
 
-/studio
-
-/producer
+The API documentation is available with Swagger at URL: http://localhost:8080/swagger-ui.html
 
 ## 🔬 Running Tests
 
 Use Manven Test to run all tests together. In Eclipse IDE, righ click "pom.xml" -> "Run as" -> "Maven test"
 
-Tests will use "test" profile and will load the CSV file "movielist-test.csv" which is located in the path "src\main\resources".
-
-Data in this CSV file is exclusive for tests running, so don't change it unless you know what you are doing.
-
-Tests uses a specific DB but also in H2.
+Tests will use "test" profile, so it uses a specific DB but also in H2.
