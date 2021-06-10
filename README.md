@@ -6,7 +6,9 @@ Clone this repository in your computer: https://github.com/thiagobdp/investor-ac
 
 ## 💻 Running the project
 
-Start running UserAccreditationApplication.java. 
+Start running UserAccreditationApplication.java
+
+In Eclipse IDE right click file UserAccreditationApplication.java -> Run As -> Java Application
 
 ## 📄 User Accreditation 
 
