@@ -15,7 +15,6 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import br.com.investoraccreditation.controller.form.DocumentForm;
 import br.com.investoraccreditation.controller.form.PayloadForm;
 import br.com.investoraccreditation.repository.DocumentRepository;
 
