@@ -26,6 +26,8 @@ The API documentation is available with Swagger at URL: http://localhost:8080/sw
 
 ## 🔬 Running Tests
 
+The are automated tests available for the UserController and all Repositories.
+
 Use Manven Test to run all tests together. In Eclipse IDE, righ click "pom.xml" -> "Run as" -> "Maven test"
 
 Tests will use "test" profile, so it uses a specific DB but also in H2.
