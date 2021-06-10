@@ -1,4 +1,4 @@
-#User Accreditation API
+# User Accreditation API
 
 ## ⚙ Getting Started
 
