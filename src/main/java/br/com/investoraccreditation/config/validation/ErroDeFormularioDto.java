@@ -4,7 +4,7 @@ public class ErroDeFormularioDto {
 
 	public String campo;
 	public String erro;
-	
+
 	public ErroDeFormularioDto(String campo, String erro) {
 		super();
 		this.campo = campo;
@@ -18,5 +18,5 @@ public class ErroDeFormularioDto {
 	public String getErro() {
 		return erro;
 	}
-		
+
 }

@@ -34,9 +34,9 @@ public class UserController {
 
 	/**
 	 * Receives documents to accreditate an investor. In the first request to a new
-	 * user_id, save the user (investor) as accreditated=true. In the other requests
+	 * user_id, save the user (investor) as accreditated=true. In the next requests
 	 * for an existing user_id, it reverses the previous value of boolean
-	 * accreditated
+	 * accreditated and updates data base
 	 * 
 	 * @param user
 	 * @return Success: always true.
@@ -52,7 +52,7 @@ public class UserController {
 		} else {
 			// reverses the value
 			userAcc.setAccreditaded(!userAcc.getAccreditaded());
-			//add documents to user
+			// add documents to user
 			userAcc.getPayload().getDocuments().addAll(userForm.getPayload().getDocuments().stream()
 					.map(docForm -> Document.converter(docForm, documentRepository)).collect(Collectors.toList()));
 		}

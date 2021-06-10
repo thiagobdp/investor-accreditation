@@ -9,8 +9,6 @@ import javax.persistence.OneToOne;
 import br.com.investoraccreditation.controller.form.UserAccreditationForm;
 import br.com.investoraccreditation.repository.DocumentRepository;
 import br.com.investoraccreditation.repository.PayloadRepository;
-import br.com.investoraccreditation.repository.UserAccreditationRepository;
-import net.bytebuddy.agent.builder.AgentBuilder.RedefinitionStrategy.Listener.Pausing;
 
 @Entity
 public class UserAccreditation {

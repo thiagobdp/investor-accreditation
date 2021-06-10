@@ -28,7 +28,7 @@ public class Document {
 	@NotNull
 	@NotEmpty
 	private String content;
-	
+
 	public Document(DocumentForm form) {
 		super();
 		this.name = form.getName();
@@ -79,8 +79,8 @@ public class Document {
 	public Document() {
 		super();
 	}
-	
-	public static Document converter (DocumentForm docForm, DocumentRepository documentRepository) {
+
+	public static Document converter(DocumentForm docForm, DocumentRepository documentRepository) {
 		Document doc = new Document(docForm);
 		return documentRepository.save(doc);
 	}

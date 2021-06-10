@@ -1,14 +1,10 @@
 package br.com.investoraccreditation.controller;
 
-import static org.junit.Assert.*;
-
 import java.net.URI;
 
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.skyscreamer.jsonassert.JSONAssert;
-import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;

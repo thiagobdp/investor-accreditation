@@ -2,7 +2,6 @@ package br.com.investoraccreditation.repository;
 
 import java.util.Arrays;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -17,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import br.com.investoraccreditation.model.AccreditationTypeEnum;
 import br.com.investoraccreditation.model.Document;
 import br.com.investoraccreditation.model.Payload;
-import br.com.investoraccreditation.model.UserAccreditation;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest

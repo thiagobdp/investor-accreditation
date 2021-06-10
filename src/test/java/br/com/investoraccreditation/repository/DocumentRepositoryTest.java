@@ -32,7 +32,6 @@ public class DocumentRepositoryTest {
 		String name = "teste name 01";
 		String mimeType = "mimeType 01";
 		String content = "content test01";
-
 		Document doc = em.persist(new Document(name, mimeType, content));
 
 		Optional<Document> docPersisted = this.repository.findById(doc.getId());
@@ -44,7 +43,7 @@ public class DocumentRepositoryTest {
 
 	@Test
 	public void findByNotExistingUserIdTest() {
-		Long userId = Long.valueOf(2);
+		Long userId = Long.valueOf(200);
 
 		Optional<Document> docPersisted = this.repository.findById(userId);
 		Assert.assertFalse(docPersisted.isPresent());
