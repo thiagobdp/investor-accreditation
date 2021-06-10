@@ -18,9 +18,10 @@ import br.com.investoraccreditation.controller.form.UserAccreditationForm;
 public class UserController {
 
 	/**
+	 * Receives documents to accreditate an investor
 	 * 
-	 * 
-	 * @return
+	 * @param user
+	 * @return Success: always true. Accredited: random true/false.
 	 */
 	@PostMapping(path = "accreditation", consumes = { "application/json" })
 	public UserAccreditationDto accreditation(@RequestBody @Valid UserAccreditationForm user) {
