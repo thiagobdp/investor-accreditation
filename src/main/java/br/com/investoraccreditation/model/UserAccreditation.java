@@ -15,6 +15,10 @@ public class UserAccreditation {
 	private String userId;
 	private Boolean accreditaded;
 
+	public UserAccreditation() {
+		super();
+	}
+
 	public UserAccreditation(String userId, Boolean accreditaded) {
 		super();
 		this.userId = userId;
