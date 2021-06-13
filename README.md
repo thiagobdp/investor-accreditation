@@ -2,7 +2,7 @@
 
 ## ⚙ Getting Started
 
-Clone this repository in your computer: https://github.com/thiagobdp/investor-accreditation
+Clone this repository in your computer: https://github.com/thiagobdp/user-accreditation
 
 ## 💻 Running the project
 
