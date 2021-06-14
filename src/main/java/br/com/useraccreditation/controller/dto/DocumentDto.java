@@ -1,12 +1,20 @@
 package br.com.useraccreditation.controller.dto;
 
 import br.com.useraccreditation.model.Document;
+import io.swagger.annotations.ApiModelProperty;
 
 public class DocumentDto {
 
+	@ApiModelProperty(value="Document ID in database")
 	private Long id;
+	
+	@ApiModelProperty(value="Name of the document")
 	private String name;
+	
+	@ApiModelProperty(value="MimeType of the document")
 	private String mimeType;
+	
+	@ApiModelProperty(value="The document itself")
 	private String content;
 
 	public DocumentDto(Document d) {

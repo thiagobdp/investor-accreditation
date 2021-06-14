@@ -8,12 +8,15 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import br.com.useraccreditation.model.AccreditationTypeEnum;
+import io.swagger.annotations.ApiModelProperty;
 
 public class PayloadForm {
 
+	@ApiModelProperty(value = "Type of the Accreditation")
 	@NotNull
 	private AccreditationTypeEnum accreditation_type;
 
+	@ApiModelProperty(value = "Documents for Accreditation")
 	@NotNull
 	@NotEmpty
 	@Size(min = 1)

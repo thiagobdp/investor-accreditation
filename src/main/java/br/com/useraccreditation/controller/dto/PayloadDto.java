@@ -5,11 +5,17 @@ import java.util.stream.Collectors;
 
 import br.com.useraccreditation.model.AccreditationTypeEnum;
 import br.com.useraccreditation.model.Payload;
+import io.swagger.annotations.ApiModelProperty;
 
 public class PayloadDto {
 
+	@ApiModelProperty(value="Payload ID in database")
 	private Long id;
+	
+	@ApiModelProperty(value="Type of the Accreditation")
 	private AccreditationTypeEnum accreditationType;
+	
+	@ApiModelProperty(value="List of documents")
 	private List<DocumentDto> documents;
 
 	public PayloadDto(Payload p) {

@@ -1,8 +1,13 @@
 package br.com.useraccreditation.controller.dto;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class UserAccreditationDto {
 
+	@ApiModelProperty(value="If the Accreditation operation is executed successfully")
 	private Boolean success;
+	
+	@ApiModelProperty(value="If the User was accredited or not")
 	private Boolean accredited;
 
 	public UserAccreditationDto(boolean success, boolean accredited) {

@@ -18,6 +18,9 @@ import br.com.useraccreditation.model.UserAccreditation;
 import br.com.useraccreditation.repository.DocumentRepository;
 import br.com.useraccreditation.repository.PayloadRepository;
 import br.com.useraccreditation.repository.UserAccreditationRepository;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping("/user")
@@ -36,13 +39,15 @@ public class UserController {
 	 * Receives documents to accreditate an investor. In the first request to a new
 	 * user_id, save the user (investor) as accreditated=true. In the next requests
 	 * for an existing user_id, it reverses the previous value of boolean
-	 * accreditated and updates data base
+	 * accreditated and updates database
 	 * 
 	 * @param user
 	 * @return Success: always true.
 	 */
+	@ApiOperation(value = "Receives documents to accreditate an investor. In the first request to a new user_id, save the user (investor) as accreditated=true. In the next requests for an existing user_id, it reverses the previous value of boolean accreditated and updates database")
+	@ApiResponses(value = { @ApiResponse(code = 200, message = "Returns if the user has been accredited or not") })
 	@Transactional
-	@PostMapping(path = "accreditation", consumes = { "application/json" })
+	@PostMapping(path = "accreditation", consumes = { "application/json" }, produces = { "application/json" })
 	public UserAccreditationDto accreditation(@RequestBody @Valid UserAccreditationForm userForm) {
 
 		UserAccreditation userAcc = userAccreditationRepository.findByUserId(userForm.getUser_id());
