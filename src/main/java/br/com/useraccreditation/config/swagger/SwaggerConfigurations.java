@@ -35,8 +35,8 @@ public class SwaggerConfigurations {
 		return new ArrayList<ResponseMessage>() {
 			{//
 				add(new ResponseMessageBuilder()//
-						.code(500)//
-						.message("500 message")//
+						.code(200)//
+						.message("ok")//
 						.build());				
 			}
 		};
